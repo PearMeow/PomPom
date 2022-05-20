@@ -11,7 +11,7 @@ public class starter {
    
       try{
          String fileName = "AD-128.png";
-         String website = "https://github.com/PearMeow/PomPom/PNG-128/"+fileName;
+         String website = "https://github.com/PearMeow/PomPom/blob/main/PNG-128/"+fileName;
          
          System.out.println("Downloading File From: " + website);
          
