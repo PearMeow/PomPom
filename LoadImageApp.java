@@ -27,7 +27,7 @@
  * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- */ 
+ */
 
 
 import java.awt.*;
@@ -41,8 +41,9 @@ import javax.swing.*;
  * This class demonstrates how to load an Image from an external file
  */
 public class LoadImageApp extends Component {
-          
+
     BufferedImage img;
+    BufferedImage img2;
 
     public void paint(Graphics g) {
         g.drawImage(img, 0, 0, null);
@@ -50,7 +51,11 @@ public class LoadImageApp extends Component {
 
     public LoadImageApp() {
        try {
-           img = ImageIO.read(new File("strawberry.jpg"));
+           img = ImageIO.read(new File("PNG-128/US-128.png"));
+       } catch (IOException e) {
+       }
+       try {
+           img2 = ImageIO.read(new File("PNG-128/US-128.png"));
        } catch (IOException e) {
        }
 
@@ -64,19 +69,47 @@ public class LoadImageApp extends Component {
        }
     }
 
-    public static void main(String[] args) {
-
-        JFrame f = new JFrame("Load Image Sample");
-            
-        f.addWindowListener(new WindowAdapter(){
-                public void windowClosing(WindowEvent e) {
-                    System.exit(0);
-                }
-            });
-
-        f.add(new LoadImageApp());
-        f.pack();
-        f.setVisible(true);
+    public String toString() {
+      int width = img.getWidth();
+      int height = img.getHeight();
+      System.out.println(width + "by " + height);
+      String retVal = "";
+      for (int xcord = 0; xcord < width ; xcord ++) {
+        for (int ycord = 0; ycord < height; ycord ++) {
+          retVal += ("(" + img.getRGB(xcord,ycord) +  "), ");
+        }
+        retVal += ("\n");
+      }
+      return retVal;
     }
-}
 
+    public void setBlank() {
+      int width = img.getWidth();
+      int height = img.getHeight();
+      for (int xcord = 0; xcord < width ; xcord ++) {
+        for (int ycord = 0; ycord < height; ycord ++) {
+          img.setRGB(xcord,ycord,-201326593);
+        }
+
+      }
+    }
+
+    public void reSize(int multiple) {
+      int width = img.getWidth();
+      int height = img.getHeight();
+      img = img.getScaledInstance(width * multiple,height * multiple, multiple);
+      img2 = img2.getScaledInstance(width * multiple,height * multiple, multiple);
+    }
+
+    public void addPixels(int repeat) {
+      int width = img.getWidth();
+      int height = img.getHeight();
+      for (int repeater = 0; repeater < repeat; repeater +=1) {
+        int xcord = (int)(Math.random() * width);
+        int ycord = (int)(Math.random() * height);
+        System.out.println(xcord + ", " + ycord);
+        img.setRGB(xcord, ycord, img2.getRGB(xcord,ycord));
+      }
+    }
+
+}
