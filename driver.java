@@ -23,7 +23,6 @@ public class driver {
               }
           });
       LoadImageApp frameImage = new LoadImageApp();
-      frameImage.reSize(10);
       frameImage.setBlank();
       frameImage.addPixels(2000);
       f.add(frameImage);
@@ -32,7 +31,7 @@ public class driver {
 
       delay(3000);
       f.addNotify();
-      frameImage.addPixels(8000);
+      frameImage.addPixels(80000);
       f.add(frameImage);
       f.pack();
       f.setVisible(true);

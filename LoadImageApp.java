@@ -94,13 +94,6 @@ public class LoadImageApp extends Component {
       }
     }
 
-    public void reSize(int multiple) {
-      int width = img.getWidth();
-      int height = img.getHeight();
-      img = img.getScaledInstance(width * multiple,height * multiple, multiple);
-      img2 = img2.getScaledInstance(width * multiple,height * multiple, multiple);
-    }
-
     public void addPixels(int repeat) {
       int width = img.getWidth();
       int height = img.getHeight();
