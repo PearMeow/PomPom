@@ -44,20 +44,22 @@ public class LoadImageApp extends Component {
 
     BufferedImage img;
     BufferedImage img2;
+    BufferedImage resize;
 
     public void paint(Graphics g) {
-        g.drawImage(img, 0, 0, null);
+        g.drawImage(resize, 0, 0, null);
     }
 
     public LoadImageApp() {
        try {
-           img = ImageIO.read(new File("PNG-128/US-128.png"));
+           img = ImageIO.read(new File("PNG-128/DK-128.png"));
        } catch (IOException e) {
        }
        try {
-           img2 = ImageIO.read(new File("PNG-128/US-128.png"));
+           img2 = ImageIO.read(new File("PNG-128/DK-128.png"));
        } catch (IOException e) {
        }
+       resize = null;
 
     }
 
@@ -81,6 +83,25 @@ public class LoadImageApp extends Component {
         retVal += ("\n");
       }
       return retVal;
+    }
+
+    public void reSize (int i) {
+      int width = 10;
+      int height = 10;
+      resize = new BufferedImage(width * i, height * i, img.getType());
+      for (int xcord = 0; xcord < width * i ; xcord += i) {
+        for (int ycord = 0; ycord < height * i; ycord +=i) {
+          for (int count = 0; count < i; count ++) {
+            for (int count2 = 0; count2 < i; count2 ++) {
+                System.out.print(xcord / i);
+                System.out.println(" , " + ycord / i);
+                resize.setRGB(xcord + count, ycord + count2, img.getRGB(xcord / i,ycord / i));
+            }
+            
+          }
+        }
+        
+      }
     }
 
     public void setBlank() {

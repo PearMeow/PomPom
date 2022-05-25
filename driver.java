@@ -23,18 +23,14 @@ public class driver {
               }
           });
       LoadImageApp frameImage = new LoadImageApp();
-      frameImage.setBlank();
-      frameImage.addPixels(2000);
+      
+      frameImage.reSize(5);
+      
       f.add(frameImage);
       f.pack();
       f.setVisible(true);
 
-      delay(3000);
-      f.addNotify();
-      frameImage.addPixels(80000);
-      f.add(frameImage);
-      f.pack();
-      f.setVisible(true);
+      
 
   }
 }
