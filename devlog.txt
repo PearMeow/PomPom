@@ -11,7 +11,7 @@ flag game
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- 
+- Images randomly turned monochrome. Overcome by changing bufferedImage type
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -19,7 +19,7 @@ UNRESOLVED ISSUES
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
--
+- Image Type 1 baby
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -46,5 +46,9 @@ Updated driver.
 -------------------------------------------------------------- 
 2022-05-25:
 Perry :: Created devlog.txt and updated README.md.
-
+Everyone :: Created reSize method to make images bigger. For some reason images randomly turned monochrome.
+-------------------------------------------------------------- 
+2022-05-26:
+Everyone :: Fixed reSize and getPreferredSize to get rid of monochrome images and size issues with the window.
 ==============================================================
+

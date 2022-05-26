@@ -51,30 +51,35 @@ public class LoadImageApp extends Component {
     }
 
     public LoadImageApp() {
+      String image = "PNG-128/WF-128.png";
        try {
-           img = ImageIO.read(new File("PNG-128/DK-128.png"));
+           img = ImageIO.read(new File(image));
        } catch (IOException e) {
        }
        try {
-           img2 = ImageIO.read(new File("PNG-128/DK-128.png"));
+           img2 = ImageIO.read(new File(image));
        } catch (IOException e) {
        }
-       resize = null;
+       try {
+           resize = ImageIO.read(new File(image));
+       } catch (IOException e) {
+       }
 
     }
 
     public Dimension getPreferredSize() {
         if (img == null) {
-             return new Dimension(100,100);
+             return new Dimension(600,600);
         } else {
-           return new Dimension(img.getWidth(null), img.getHeight(null));
+           return new Dimension(img.getWidth(null) * 10, img.getHeight(null) * 10);
        }
     }
 
     public String toString() {
       int width = img.getWidth();
       int height = img.getHeight();
-      System.out.println(width + "by " + height);
+      
+      
       String retVal = "";
       for (int xcord = 0; xcord < width ; xcord ++) {
         for (int ycord = 0; ycord < height; ycord ++) {
@@ -86,16 +91,16 @@ public class LoadImageApp extends Component {
     }
 
     public void reSize (int i) {
-      int width = 10;
-      int height = 10;
-      resize = new BufferedImage(width * i, height * i, img.getType());
+      int width = img.getWidth();
+      int height = img.getHeight();
+
+      resize = new BufferedImage(width * i, height * i, 1);
       for (int xcord = 0; xcord < width * i ; xcord += i) {
         for (int ycord = 0; ycord < height * i; ycord +=i) {
           for (int count = 0; count < i; count ++) {
             for (int count2 = 0; count2 < i; count2 ++) {
-                System.out.print(xcord / i);
-                System.out.println(" , " + ycord / i);
-                resize.setRGB(xcord + count, ycord + count2, img.getRGB(xcord / i,ycord / i));
+                
+                resize.setRGB(xcord + count, ycord + count2, img.getRGB((xcord / i), (ycord / i)));
             }
             
           }
@@ -109,7 +114,7 @@ public class LoadImageApp extends Component {
       int height = img.getHeight();
       for (int xcord = 0; xcord < width ; xcord ++) {
         for (int ycord = 0; ycord < height; ycord ++) {
-          img.setRGB(xcord,ycord,-201326593);
+          img.setRGB(xcord,ycord,-1);
         }
 
       }
@@ -121,9 +126,9 @@ public class LoadImageApp extends Component {
       for (int repeater = 0; repeater < repeat; repeater +=1) {
         int xcord = (int)(Math.random() * width);
         int ycord = (int)(Math.random() * height);
-        System.out.println(xcord + ", " + ycord);
+        
         img.setRGB(xcord, ycord, img2.getRGB(xcord,ycord));
       }
     }
-
+    
 }
