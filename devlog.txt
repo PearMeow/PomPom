@@ -50,5 +50,6 @@ Everyone :: Created reSize method to make images bigger. For some reason images 
 -------------------------------------------------------------- 
 2022-05-26:
 Everyone :: Fixed reSize and getPreferredSize to get rid of monochrome images and size issues with the window.
+Perry :: Added propro.pdf and made v0 folder.
 ==============================================================
 
