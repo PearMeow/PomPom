@@ -45,7 +45,7 @@ public class LoadImageApp extends Component {
     BufferedImage img;
     BufferedImage img2;
     BufferedImage resize;
-
+    int _size;
     public void paint(Graphics g) {
         g.drawImage(resize, 0, 0, null);
     }
@@ -64,16 +64,10 @@ public class LoadImageApp extends Component {
            resize = ImageIO.read(new File(image));
        } catch (IOException e) {
        }
-
+       _size = 2;
     }
 
-    public Dimension getPreferredSize() {
-        if (img == null) {
-             return new Dimension(600,600);
-        } else {
-           return new Dimension(img.getWidth(null) * 10, img.getHeight(null) * 10);
-       }
-    }
+
 
     public String toString() {
       int width = img.getWidth();
@@ -90,10 +84,18 @@ public class LoadImageApp extends Component {
       return retVal;
     }
 
+    public Dimension getPreferredSize() {
+        if (img == null) {
+             return new Dimension(600,600);
+        } else {
+           return new Dimension(img.getWidth(null) * _size, img.getHeight(null) * _size);
+       }
+    }
+
     public void reSize (int i) {
       int width = img.getWidth();
       int height = img.getHeight();
-
+      _size = i;
       resize = new BufferedImage(width * i, height * i, 1);
       for (int xcord = 0; xcord < width * i ; xcord += i) {
         for (int ycord = 0; ycord < height * i; ycord +=i) {
@@ -130,5 +132,7 @@ public class LoadImageApp extends Component {
         img.setRGB(xcord, ycord, img2.getRGB(xcord,ycord));
       }
     }
+
+
     
 }

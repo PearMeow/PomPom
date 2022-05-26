@@ -4,7 +4,7 @@ import java.awt.image.*;
 import java.io.*;
 import javax.imageio.*;
 import javax.swing.*;
-public class driver {
+public class foo {
   private static void delay( int n )
   {
     try {
@@ -23,12 +23,13 @@ public class driver {
               }
           });
       LoadImageApp frameImage = new LoadImageApp();
-      
-      frameImage.reSize(5);
-      
+      frameImage.addPixels(10);
+ //     frameImage.reSize(10);
+
       f.add(frameImage);
       f.pack();
       f.setVisible(true);
+
 
       
 
