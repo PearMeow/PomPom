@@ -36,6 +36,8 @@ import java.awt.image.*;
 import java.io.*;
 import javax.imageio.*;
 import javax.swing.*;
+import java.util.Queue;
+import java.util.ArrayList;
 
 /**
  * This class demonstrates how to load an Image from an external file
@@ -140,7 +142,7 @@ public class LoadImageApp extends Component {
       reSize(_size);
     }
 
-    public void addPixelsfuzz(int repeat) {
+    public void addPixelsFuzz(int repeat) {
       int width = img.getWidth();
       int height = img.getHeight();
       for (int repeater = 0; repeater < repeat; repeater +=1) {
@@ -153,21 +155,41 @@ public class LoadImageApp extends Component {
     }
 
     public void addPixelsSeg(int repeat, int seg) {
-      int width = img.getWidth();
+
+
+      int width = img.getWidth() ;
       int height = img.getHeight();
-      int segRep = seg * repeat;
-       for (int xcord = 0; xcord < width / segRep ; xcord += segRep) {
-        for (int ycord = 0; ycord < height / segRep; ycord +=segRep) {
-          for (int count = 0; count < segRep; count ++) {
-            for (int count2 = 0; count2 < segRep; count2 ++) {
+      
 
-                img.setRGB(xcord + count, ycord + count2, img2.getRGB(xcord+count, ycord + count2));
+      for (int reps = 0; reps < repeat; reps++) {
+        int w = (int)(Math.random() * (width - seg) );
+        int h = (int)(Math.random() * (height - seg));
+        for (int ww = 0; ww < seg; ww ++) {
+          for (int hh = 0; hh < seg; hh ++) {
+            img.setRGB(w+ww,h+hh, img2.getRGB(w+ww, h+hh));
+        }
+        }
+        
+      }
+      reSize(_size);
+   
+    }
 
-            }
-           }
-         }
-       }
-    reSize(_size);
-
+    public Queue<Queue<Integer>> dubq(int x, int y) {
+      ArrayList<Integer> xx = new ArrayList<Integer>();
+      ArrayList<Integer> yy = new ArrayList<Integer>();
+      Queue<Queue<Integer>> retVal = new Queue<Queue<Integer>()>();
+      for(int Y = 0; Y < y; Y++) {
+        yy.add(Y);
+      }
+      for(int X = 0; X < x; X++) {
+        xx.add(Y);
+      }
+      for (int w = 0; w < x; w ++) {
+        int randy = (int)(Math.random() * yy.getsize());
+        ArrayList<Integer> temp = yy;
+        int val = yy.remove(randy);
+        retVal.get(w).set()
+      }
     }
 }

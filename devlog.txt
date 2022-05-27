@@ -59,4 +59,7 @@ Max :: Fixed methods so that they are compatible with resize instance variable
        Added while loop to add pixel by pixel
        Added image instance variable to simplify code
        Added overloaded constructor to make the country an input.
+--------------------------------------------------------------
+2022-05-27:
+Everyone :: Changed addPixelsSeg to work better and with delay. 
 ==============================================================

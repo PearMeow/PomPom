@@ -4,7 +4,7 @@ import java.awt.image.*;
 import java.io.*;
 import javax.imageio.*;
 import javax.swing.*;
-public class foo {
+public class Woo {
   private static void delay( int n )
   {
     try {
@@ -24,19 +24,20 @@ public class foo {
           });
       LoadImageApp frameImage = new LoadImageApp("US");
       frameImage.setBlank();
-      frameImage.addPixelsSeg(10, 5);
+      frameImage.reSize(10);
+      
 
       f.add(frameImage);
       f.pack();
-      f.setVisible(true);/*
+      f.setVisible(true);
+      
       for (int i = 0; i < 50000; i ++) {
-        delay(1);
-        frameImage.addPixelsFuzz(1);
+        delay(4);
+        frameImage.addPixelsSeg(1, 10);
 
         frameImage.repaint();
       }
-     */
-
+     
 
 
   }
