@@ -46,12 +46,29 @@ public class LoadImageApp extends Component {
     BufferedImage img2;
     BufferedImage resize;
     int _size;
+    String image;
     public void paint(Graphics g) {
         g.drawImage(resize, 0, 0, null);
     }
 
     public LoadImageApp() {
-      String image = "PNG-128/WF-128.png";
+      image = "PNG-128/WF-128.png";
+       try {
+           img = ImageIO.read(new File(image));
+       } catch (IOException e) {
+       }
+       try {
+           img2 = ImageIO.read(new File(image));
+       } catch (IOException e) {
+       }
+       try {
+           resize = ImageIO.read(new File(image));
+       } catch (IOException e) {
+       }
+       _size = 2;
+    }
+    public LoadImageApp(String n) {
+      image = "PNG-128/" + n + "-128.png";
        try {
            img = ImageIO.read(new File(image));
        } catch (IOException e) {
@@ -72,8 +89,8 @@ public class LoadImageApp extends Component {
     public String toString() {
       int width = img.getWidth();
       int height = img.getHeight();
-      
-      
+
+
       String retVal = "";
       for (int xcord = 0; xcord < width ; xcord ++) {
         for (int ycord = 0; ycord < height; ycord ++) {
@@ -101,13 +118,13 @@ public class LoadImageApp extends Component {
         for (int ycord = 0; ycord < height * i; ycord +=i) {
           for (int count = 0; count < i; count ++) {
             for (int count2 = 0; count2 < i; count2 ++) {
-                
+
                 resize.setRGB(xcord + count, ycord + count2, img.getRGB((xcord / i), (ycord / i)));
             }
-            
+
           }
         }
-        
+
       }
     }
 
@@ -120,6 +137,7 @@ public class LoadImageApp extends Component {
         }
 
       }
+      reSize(_size);
     }
 
     public void addPixels(int repeat) {
@@ -128,11 +146,12 @@ public class LoadImageApp extends Component {
       for (int repeater = 0; repeater < repeat; repeater +=1) {
         int xcord = (int)(Math.random() * width);
         int ycord = (int)(Math.random() * height);
-        
+
         img.setRGB(xcord, ycord, img2.getRGB(xcord,ycord));
       }
+      reSize(_size);
     }
 
 
-    
+
 }

@@ -15,7 +15,7 @@ OBSTACLES OVERCOME
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- 
+-
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -23,34 +23,38 @@ COOL STUFF LEARNED
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- 
+-
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- 
+-
 
- ______   ______   __   __   __       ______   _______     
-/_____/\ /_____/\ /_/\ /_/\ /_/\     /_____/\ /______/\    
-\:::_ \ \\::::_\/_\:\ \\ \ \\:\ \    \:::_ \ \\::::__\/__  
- \:\ \ \ \\:\/___/\\:\ \\ \ \\:\ \    \:\ \ \ \\:\ /____/\ 
-  \:\ \ \ \\::___\/_\:\_/.:\ \\:\ \____\:\ \ \ \\:\\_  _\/ 
-   \:\/.:| |\:\____/\\ ..::/ / \:\/___/\\:\_\ \ \\:\_\ \ \ 
-    \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/ 
+ ______   ______   __   __   __       ______   _______
+/_____/\ /_____/\ /_/\ /_/\ /_/\     /_____/\ /______/\
+\:::_ \ \\::::_\/_\:\ \\ \ \\:\ \    \:::_ \ \\::::__\/__
+ \:\ \ \ \\:\/___/\\:\ \\ \ \\:\ \    \:\ \ \ \\:\ /____/\
+  \:\ \ \ \\::___\/_\:\_/.:\ \\:\ \____\:\ \ \ \\:\\_  _\/
+   \:\/.:| |\:\____/\\ ..::/ / \:\/___/\\:\_\ \ \\:\_\ \ \
+    \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/
 ==============================================================
 
 2022-05-22:
--------------------------------------------------------------- 
+--------------------------------------------------------------
 Max :: Used buffered image class to isolate images and analyze them pixel by pixel.
 Created 2 methods, addPixels and setBlank, allowing for recreation of an image pixel by pixel.
 Updated driver.
--------------------------------------------------------------- 
+--------------------------------------------------------------
 2022-05-25:
 Perry :: Created devlog.txt and updated README.md.
 Everyone :: Created reSize method to make images bigger. For some reason images randomly turned monochrome.
--------------------------------------------------------------- 
+--------------------------------------------------------------
 2022-05-26:
 Everyone :: Fixed reSize and getPreferredSize to get rid of monochrome images and size issues with the window.
 Perry :: Added propro.pdf and made v0 folder.
-Oscar :: Added _soze variabvle for mathcing window size for flag no matter the resize
+Oscar :: Added _size variabvle for mathcing window size for flag no matter the resize
+Max :: Fixed methods so that they are compatible with resize instance variable
+       Figured out how to update JFrame on command
+       Added while loop to add pixel by pixel
+       Added image instance variable to simplify code
+       Added overloaded constructor to make the country an input.
 ==============================================================
-
