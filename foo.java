@@ -24,18 +24,18 @@ public class foo {
           });
       LoadImageApp frameImage = new LoadImageApp("US");
       frameImage.setBlank();
-      frameImage.addPixels(1000);
+      frameImage.addPixelsSeg(10, 5);
 
       f.add(frameImage);
       f.pack();
-      f.setVisible(true);
+      f.setVisible(true);/*
       for (int i = 0; i < 50000; i ++) {
         delay(1);
-        frameImage.addPixels(1);
+        frameImage.addPixelsFuzz(1);
 
         frameImage.repaint();
       }
-
+     */
 
 
 

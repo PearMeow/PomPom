@@ -52,6 +52,8 @@ Everyone :: Created reSize method to make images bigger. For some reason images 
 Everyone :: Fixed reSize and getPreferredSize to get rid of monochrome images and size issues with the window.
 Perry :: Added propro.pdf and made v0 folder.
 Oscar :: Added _size variabvle for mathcing window size for flag no matter the resize
+         Added addPixelsSeg(int repeat int seg); to show the flag in "seg" amounts "repeat" times
+         Renamed addPixels(int repeat); to addPixelsFuzz(int repeat); because it displays a fuzzy random pixel reveal
 Max :: Fixed methods so that they are compatible with resize instance variable
        Figured out how to update JFrame on command
        Added while loop to add pixel by pixel

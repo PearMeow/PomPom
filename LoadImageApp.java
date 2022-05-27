@@ -140,7 +140,7 @@ public class LoadImageApp extends Component {
       reSize(_size);
     }
 
-    public void addPixels(int repeat) {
+    public void addPixelsfuzz(int repeat) {
       int width = img.getWidth();
       int height = img.getHeight();
       for (int repeater = 0; repeater < repeat; repeater +=1) {
@@ -152,6 +152,22 @@ public class LoadImageApp extends Component {
       reSize(_size);
     }
 
+    public void addPixelsSeg(int repeat, int seg) {
+      int width = img.getWidth();
+      int height = img.getHeight();
+      int segRep = seg * repeat;
+       for (int xcord = 0; xcord < width / segRep ; xcord += segRep) {
+        for (int ycord = 0; ycord < height / segRep; ycord +=segRep) {
+          for (int count = 0; count < segRep; count ++) {
+            for (int count2 = 0; count2 < segRep; count2 ++) {
 
+                img.setRGB(xcord + count, ycord + count2, img2.getRGB(xcord+count, ycord + count2));
 
+            }
+           }
+         }
+       }
+    reSize(_size);
+
+    }
 }
