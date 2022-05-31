@@ -71,5 +71,5 @@ Max :: Added eRows and user to keep track of added addPixels
        Resized frame
 --------------------------------------------------------------
 2022-05-30:
-Perry :: Fixed gitignore.
+Perry :: Fixed gitignore and added a flag.
 ==============================================================
