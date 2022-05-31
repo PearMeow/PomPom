@@ -22,22 +22,33 @@ public class Woo {
                   System.exit(0);
               }
           });
-      LoadImageApp frameImage = new LoadImageApp("US");
+      LoadImageApp frameImage = new LoadImageApp("RU");
       frameImage.setBlank();
       frameImage.reSize(10);
-      
-
+      frameImage.setBounds(200,200,1280,640);
       f.add(frameImage);
-      f.pack();
+
+
+      JLabel title = new JLabel("Welcome to Narnia");
+      title.setBounds(0,0,1280,200);
+      f.add(title);
+
+
+      f.setSize(2000,1000);
+      f.setLayout(null);
+
       f.setVisible(true);
-      
-      for (int i = 0; i < 50000; i ++) {
-        delay(4);
-        frameImage.addPixelsSeg(1, 10);
+
+      for (int i = 0; i < (128 * 4); i ++) {
+        if (stop.isEnabled() == true) {
+          return;
+        }
+        delay(1);
+        frameImage.addPixelsFuzz(16);
 
         frameImage.repaint();
       }
-     
+
 
 
   }
