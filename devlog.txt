@@ -61,5 +61,12 @@ Max :: Fixed methods so that they are compatible with resize instance variable
        Added overloaded constructor to make the country an input.
 --------------------------------------------------------------
 2022-05-27:
-Everyone :: Changed addPixelsSeg to work better and with delay. 
+Everyone :: Changed addPixelsSeg to work better and with delay.
+--------------------------------------------------------------
+2022-05-30:
+Max :: Added eRows and user to keep track of added addPixels
+       Fixed issue of adding pixels that were already Added
+       tentatively removed addPixelsSeg
+       Added new items to frame
+       Resized frame
 ==============================================================
