@@ -1,4 +1,3 @@
-
 # Compiled class file
 *.class
 
@@ -45,4 +44,4 @@ ehthumbs.db
 
 # Filenames with special characters
 **/*[\\/\:;*?!'"<>|$º•¶§∞¢£]*
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

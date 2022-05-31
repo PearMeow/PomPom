@@ -69,4 +69,7 @@ Max :: Added eRows and user to keep track of added addPixels
        tentatively removed addPixelsSeg
        Added new items to frame
        Resized frame
+--------------------------------------------------------------
+2022-05-30:
+Perry :: Fixed gitignore.
 ==============================================================
