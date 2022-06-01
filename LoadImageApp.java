@@ -11,6 +11,7 @@ import java.util.ArrayList;
  * This class demonstrates how to load an Image from an external file
  */
 public class LoadImageApp extends Component {
+    String[] countries = {"AD","AE","AF","AG","AI","AL","AM","AO","AQ","AR","AS","AT","AU","AW","AX","AZ","BA","BB","BD","BE","BF","BG","BH","BI","BJ","BL","BM","BN","BO","BQ","BR","BS","BT","BV","BW","BY","BZ","CA","CA","CC","CD","CF","CG","CH","CI","CK","CL","CM","CN","CO","CR","CU","CV","CW","CX","CY","CZ","DE","DJ","DK","DM","DO","DZ","EC","EE","EG","EH","ER","ES","ET","EU","FI","FJ","FK","FM","FO","FR","GA","GB","GD","GE","GF","GG","GH","GI","GL","GM","GN","GP","GQ","GR","GS","GT","GU","GW","GY","HK","HM","HN","HR","HT","HU","ID","IE","IL","IM","IN","IO","IQ","IR","IS","IT","JE","JM","JO","JP","KE","KG","KH","KI","KM","KN","KP","KR","KW","KY","KZ","LA","LB","LC","LI","LK","LR","LS","LT","LU","LV","LY","MA","MC","MD","ME","MF","MG","MH","MK","ML","MM","MN","MO","MP","MQ","MR","MS","MT","MU","MU","MV","MW","MX","MY","MZ","NA","NC","NE","NF","NG","NI","NL","NO","NP","NR","NU","NZ","OM","PA","PE","PF","PG","PH","PK","PL","PM","PN","PR","PS","PT","PW","PY","QA","RE","RO","RS","RU","RW","SA","SB","SC","SD","SE","SG","SH","SI","SJ","SK","SL","SM","SN","SO","SR","SS","ST","SV","SX","SY","SZ","TC","TD","TF","TG","TH","TJ","TK","TL","TM","TN","TO","TR","TT","TV","TW","TZ","UA","UG","UM","US","UY","UZ","VA","VC","VE","VG","VI","VN","VU","WF","WS","YE","YT","ZA","ZM","ZW"};
 
     BufferedImage img;
     BufferedImage img2;
@@ -76,12 +77,14 @@ public class LoadImageApp extends Component {
       int width = img.getWidth();
       int height = img.getHeight();
       _size = i;
-      resize = new BufferedImage(width * i, height * i, 1);
-      for (int xcord = 0; xcord < width * i ; xcord += i) {
-        for (int ycord = 0; ycord < height * i; ycord +=i) {
+      
+      resize = new BufferedImage(width * i , height * i , 1);
+      System.out.println(image + ", " + width + ", " + height + ", " + i + ", " + _size + ", " + resize.getWidth() + ", " + resize.getHeight());
+      for (int xcord = 0; xcord < (width * i) ; xcord += i) {
+        for (int ycord = 0; ycord < (height * i) ; ycord +=i) {
           for (int count = 0; count < i; count ++) {
             for (int count2 = 0; count2 < i; count2 ++) {
-
+                
                 resize.setRGB(xcord + count, ycord + count2, img.getRGB((xcord / i), (ycord / i)));
             }
 
@@ -110,7 +113,8 @@ public class LoadImageApp extends Component {
       int width = img.getWidth();
       int height = img.getHeight();
       int i = 0;
-      System.out.println(eRows);
+      int oldSize = _size;
+      reSize(1);
       while (eRows < img.getWidth() && i < repeat) {
         int randRow = (int)(Math.random() * width);
         int x = randRow;
@@ -129,7 +133,7 @@ public class LoadImageApp extends Component {
         }
       }
 
-       reSize(_size);
+      reSize(oldSize);
     }
 
     // public void addPixelsSeg(int repeat, int seg) {
@@ -182,5 +186,28 @@ public class LoadImageApp extends Component {
 
       }
       return retVal;
+    }
+
+    public void changeFlag() {
+      int rando = (int)(Math.random() * countries.length);
+      String newC = countries[rando];
+      image = "PNG-128/" + newC + "-128.png";
+       try {
+           img = ImageIO.read(new File(image));
+       } catch (IOException e) {
+       }
+       try {
+           img2 = ImageIO.read(new File(image));
+       } catch (IOException e) {
+       }
+       try {
+           resize = ImageIO.read(new File(image));
+       } catch (IOException e) {
+       }
+       eRows = 0;
+       _size = 1;
+       user = dubq(img.getWidth(),img.getHeight());
+       setBlank();
+       reSize(_size);
     }
 }
