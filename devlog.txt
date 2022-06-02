@@ -77,4 +77,7 @@ Perry :: Fixed gitignore and added a flag. Also finished string of countries.
 2022-06-01:
 Oscar :: Updated flow chart and uml diagram to represent v1 of work
 Max :: Added Transfer Method and cleaned up other methods.
+--------------------------------------------------------------
+2022-06-02:
+Everyone: added new class for the flag types named Flag, containing the difficulties of each flag.
 ==============================================================
