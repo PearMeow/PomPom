@@ -15,7 +15,7 @@ OBSTACLES OVERCOME
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- Woo should have only 1 line of code that says something like "play();" and 
+- Woo should have only 1 line of code that says something like "play();" and
 LoadImageApp should have the play method with all the stuff in it.
 
 COOL STUFF LEARNED
@@ -80,4 +80,6 @@ Max :: Added Transfer Method and cleaned up other methods.
 --------------------------------------------------------------
 2022-06-02:
 Everyone: added new class for the flag types named Flag, containing the difficulties of each flag.
+Max :: Fixed transfer, added textField for user inputs
+       Discovered issue was due to the lag and the computer not being able to think fast enough, causing problems
 ==============================================================

@@ -20,12 +20,14 @@ public class LoadImageApp extends Component {
     String image;
     int eRows;
     ArrayDeque<Integer>[] user;
+    String text;
     public void paint(Graphics g) {
         g.drawImage(resize, 0, 0, null);
     }
 
     public LoadImageApp() {
       image = "PNG-128/WF-128.png";
+      text = "WF";
        try {
            img = ImageIO.read(new File(image));
        } catch (IOException e) {
@@ -44,6 +46,7 @@ public class LoadImageApp extends Component {
     }
     public LoadImageApp(String n) {
       image = "PNG-128/" + n + "-128.png";
+      text = n;
        try {
            img = ImageIO.read(new File(image));
        } catch (IOException e) {
@@ -62,7 +65,9 @@ public class LoadImageApp extends Component {
     }
 
 
-
+    public String getText() {
+      return text;
+    }
 
 
     public Dimension getPreferredSize() {
@@ -81,14 +86,12 @@ public class LoadImageApp extends Component {
       resize = new BufferedImage(width * i , height * i , 1);
       int Bwidth = resize.getWidth();
       int Bheight = resize.getHeight();
-      for (int xcord = 0; xcord < (width * i) - i ; xcord += i) {
-        for (int ycord = 0; ycord < (height * i) - i ; ycord += i) {
+      for (int xcord = 0; xcord < (width * i); xcord += i) {
+        for (int ycord = 0; ycord < (height * i); ycord += i) {
 
           for (int count = 0; count < i; count ++) {
             for (int count2 = 0; count2 < i; count2 ++) {
-                if ( (xcord / i) > width || (ycord / i) > height || (xcord + count ) > Bwidth || (ycord + count2) > Bheight || (xcord / i) < 0 || (ycord / i) < 0 || (xcord + count ) < 0 || (ycord + count2) < 0) {
-                  System.out.println("bad");
-                }
+
                 resize.setRGB(xcord + count, ycord + count2, img.getRGB((xcord / i), (ycord / i)));
             }
 
@@ -101,16 +104,23 @@ public class LoadImageApp extends Component {
     public void transfer () {
       int width = img.getWidth();
       int height = img.getHeight();
-
-      resize = new BufferedImage(width, height, 1);
+      int Bwidth = resize.getWidth();
+      int Bheight = resize.getHeight();
 
       for (int xcord = 0; xcord < width ; xcord ++) {
         for (int ycord = 0; ycord < height  ; ycord ++) {
 
-                resize.setRGB(xcord, ycord , img.getRGB(xcord, ycord));
+          for (int count = 0; count < _size; count +=_size) {
+            for (int count2 = 0; count2 < _size; count2 +=_size) {
+                if ( (xcord / _size) > width || (ycord / _size) > height || (xcord + count ) > Bwidth || (ycord + count2) > Bheight || (xcord / _size) < 0 || (ycord / _size) < 0 || (xcord + count ) < 0 || (ycord + count2) < 0) {
+                  System.out.println("bad");
+                }
+                resize.setRGB(xcord + count, ycord + count2, img.getRGB((xcord / _size), (ycord / _size)));
+            }
             }
 
           }
+        }
 
 
     }
@@ -210,6 +220,7 @@ public class LoadImageApp extends Component {
     public void changeFlag() {
       int rando = (int)(Math.random() * countries.length);
       String newC = countries[rando];
+      text = newC;
       image = "PNG-128/" + newC + "-128.png";
        try {
            img = ImageIO.read(new File(image));
@@ -224,6 +235,5 @@ public class LoadImageApp extends Component {
        } catch (IOException e) {
        }
        setBlank();
-       transfer();
     }
 }

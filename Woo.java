@@ -5,7 +5,7 @@ import java.io.*;
 import javax.imageio.*;
 import javax.swing.*;
 public class Woo {
-
+  static String text;
   static int count = 0;
   private static void delay( int n )
   {
@@ -32,24 +32,31 @@ public class Woo {
           frameImage.reSize(2);
 
       JLabel title = new JLabel("Welcome to Narnia");
-      title.setBounds(0,0,1280,200);
+      title.setBounds(0,0,200,100);
       f.add(title);
 
-      JButton ton1 = new JButton("Edit");
 
-      ton1.addActionListener(new ActionListener() {
-        @Override
+
+      JTextField textField = new JTextField(20);
+      textField.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent evt) {
-          count = 0;
-          frameImage.changeFlag();
-
-
-
+          String text = textField.getText();
+          if (text.equals(frameImage.getText())) {
+            frameImage.changeFlag();
+          }
         }
       });
+      textField.setBounds(200,0,200,200);
+      f.add(textField);
 
+      JButton ton1 = new JButton("Edit");
+      ton1.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent evt) {
+          frameImage.changeFlag();
+        }
+      });
       ton1.setMnemonic(KeyEvent.VK_E);
-      ton1.setBounds(0,100,1280,100);
+      ton1.setBounds(0,100,200,100);
       f.add(ton1);
 
       f.setSize(2000,1000);
@@ -58,11 +65,17 @@ public class Woo {
       f.setVisible(true);
 
       while (true) {
-            delay(1);
-            frameImage.addPixelsFuzz(16);
-            frameImage.reSize(3);
-            count++;
-            frameImage.repaint();
+          delay(500);
+          frameImage.addPixelsFuzz(20);
+          System.out.println("painted" + ", " + frameImage.getText());
+          delay(500);
+          frameImage.reSize(3);
+          System.out.println("resized");
+          delay(500);
+          frameImage.repaint();
+          System.out.println("repaint");
+
+
         }
 
 
