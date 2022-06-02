@@ -82,4 +82,5 @@ Max :: Added Transfer Method and cleaned up other methods.
 Everyone: added new class for the flag types named Flag, containing the difficulties of each flag.
 Max :: Fixed transfer, added textField for user inputs
        Discovered issue was due to the lag and the computer not being able to think fast enough, causing problems
+Perry :: Added temporary code to Flag.java. 
 ==============================================================
