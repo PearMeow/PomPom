@@ -5,7 +5,7 @@ import java.io.*;
 import javax.imageio.*;
 import javax.swing.*;
 public class Woo {
-  
+
   static int count = 0;
   private static void delay( int n )
   {
@@ -24,7 +24,7 @@ public class Woo {
                   System.exit(0);
               }
           });
-      
+
       LoadImageApp frameImage = new LoadImageApp("US");
       frameImage.setBounds(200,200,1280,640);
       f.add(frameImage);
@@ -36,19 +36,18 @@ public class Woo {
       f.add(title);
 
       JButton ton1 = new JButton("Edit");
-      
+
       ton1.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent evt) {
           count = 0;
           frameImage.changeFlag();
-          frameImage.reSize(2);
-          
-          
+
+
 
         }
       });
-      
+
       ton1.setMnemonic(KeyEvent.VK_E);
       ton1.setBounds(0,100,1280,100);
       f.add(ton1);
@@ -57,15 +56,16 @@ public class Woo {
       f.setLayout(null);
 
       f.setVisible(true);
-      
-      while (count < 1000000) {
+
+      while (true) {
             delay(1);
             frameImage.addPixelsFuzz(16);
+            frameImage.reSize(3);
             count++;
             frameImage.repaint();
         }
-        
-      
+
+
 
 
 

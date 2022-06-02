@@ -77,14 +77,18 @@ public class LoadImageApp extends Component {
       int width = img.getWidth();
       int height = img.getHeight();
       _size = i;
-      
+
       resize = new BufferedImage(width * i , height * i , 1);
-      System.out.println(image + ", " + width + ", " + height + ", " + i + ", " + _size + ", " + resize.getWidth() + ", " + resize.getHeight());
-      for (int xcord = 0; xcord < (width * i) ; xcord += i) {
-        for (int ycord = 0; ycord < (height * i) ; ycord +=i) {
+      int Bwidth = resize.getWidth();
+      int Bheight = resize.getHeight();
+      for (int xcord = 0; xcord < (width * i) - i ; xcord += i) {
+        for (int ycord = 0; ycord < (height * i) - i ; ycord += i) {
+
           for (int count = 0; count < i; count ++) {
             for (int count2 = 0; count2 < i; count2 ++) {
-                
+                if ( (xcord / i) > width || (ycord / i) > height || (xcord + count ) > Bwidth || (ycord + count2) > Bheight || (xcord / i) < 0 || (ycord / i) < 0 || (xcord + count ) < 0 || (ycord + count2) < 0) {
+                  System.out.println("bad");
+                }
                 resize.setRGB(xcord + count, ycord + count2, img.getRGB((xcord / i), (ycord / i)));
             }
 
@@ -92,6 +96,23 @@ public class LoadImageApp extends Component {
         }
 
       }
+    }
+
+    public void transfer () {
+      int width = img.getWidth();
+      int height = img.getHeight();
+
+      resize = new BufferedImage(width, height, 1);
+
+      for (int xcord = 0; xcord < width ; xcord ++) {
+        for (int ycord = 0; ycord < height  ; ycord ++) {
+
+                resize.setRGB(xcord, ycord , img.getRGB(xcord, ycord));
+            }
+
+          }
+
+
     }
 
     public void setBlank() {
@@ -103,24 +124,23 @@ public class LoadImageApp extends Component {
         }
 
       }
-      
+
       user = dubq(img.getWidth(),img.getHeight());
       eRows = 0;
-      reSize(_size);
+      transfer();
+
     }
 
     public void addPixelsFuzz(int repeat) {
       int width = img.getWidth();
       int height = img.getHeight();
       int i = 0;
-      int oldSize = _size;
-      reSize(1);
       while (eRows < img.getWidth() && i < repeat) {
         int randRow = (int)(Math.random() * width);
         int x = randRow;
         int y = 0;
         if (user[randRow] == null){
-          
+
         }
         else if (user[randRow].isEmpty()) {
           eRows++;
@@ -132,8 +152,7 @@ public class LoadImageApp extends Component {
           i++;
         }
       }
-
-      reSize(oldSize);
+      transfer();
     }
 
     // public void addPixelsSeg(int repeat, int seg) {
@@ -204,10 +223,7 @@ public class LoadImageApp extends Component {
            resize = ImageIO.read(new File(image));
        } catch (IOException e) {
        }
-       eRows = 0;
-       _size = 1;
-       user = dubq(img.getWidth(),img.getHeight());
        setBlank();
-       reSize(_size);
+       transfer();
     }
 }
