@@ -74,9 +74,6 @@ Max :: Added eRows and user to keep track of added addPixels
 2022-05-30:
 Perry :: Fixed gitignore and added a flag. Also finished string of countries.
 --------------------------------------------------------------
-2022-05-31:
-
---------------------------------------------------------------
 2022-06-01:
 Oscar :: Updated flow chart and uml diagram to represent v1 of work
 Max :: Added Transfer Method and cleaned up other methods.
