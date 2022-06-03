@@ -83,5 +83,9 @@ Everyone: added new class for the flag types named Flag, containing the difficul
 Max :: Fixed transfer, added textField for user inputs
        Discovered issue was due to the lag and the computer not being able to think fast enough, causing problems
 Perry :: Added temporary code to Flag.java. 
-Oscar ;; Added difficulties in LoadImageApp.java, made constructor to set to only run flags in set difficulty
+Oscar :: Added difficulties in LoadImageApp.java, made constructor to set to only run flags in set difficulty
+--------------------------------------------------------------
+2022-06-03:
+Everyone :: Revamped whole structure of files. Made Woo very simple. Added Game class for clarity. 
+Created Flag and FlagList to replace a random scramble of Strings.
 ==============================================================

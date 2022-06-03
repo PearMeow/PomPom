@@ -17,18 +17,21 @@ public class Flag {
     
     }
 
-    public Flag(int flagNumber, int flagDiff) {
-        difficulty = flagDiff;
-        if (difficulty == 1) {
-            code = countdiff1[flagNumber];
-        }
-        else if (difficulty == 2) {
-            code = countdiff2[flagNumber];
-        }
-        else if (difficulty == 3) {
-            code = countdiff3[flagNumber];
-        }
-        name = "placeholder"; //not complete
+    public Flag(int diff, String flagName, String flagCode) {
+        difficulty = diff;
+        name = flagName;
+        code = flagCode;
     }
 
+    public int getDiff() {
+        return difficulty;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String flagCode() {
+        return code;
+    }
 }
