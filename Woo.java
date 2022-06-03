@@ -25,7 +25,7 @@ public class Woo {
               }
           });
 
-      LoadImageApp frameImage = new LoadImageApp("US");
+      LoadImageApp frameImage = new LoadImageApp(2);
       frameImage.setBounds(200,200,1280,640);
       f.add(frameImage);
       frameImage.setBlank();
@@ -65,13 +65,13 @@ public class Woo {
       f.setVisible(true);
 
       while (true) {
-          delay(500);
+          delay(300);
           frameImage.addPixelsFuzz(20);
           System.out.println("painted" + ", " + frameImage.getText());
-          delay(500);
+          delay(300);
           frameImage.reSize(3);
           System.out.println("resized");
-          delay(500);
+          delay(300);
           frameImage.repaint();
           System.out.println("repaint");
 
