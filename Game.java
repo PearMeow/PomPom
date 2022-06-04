@@ -10,16 +10,16 @@ public class Game {
   private static void delay( int n ) {
         try {
         Thread.sleep(n);
-        } 
+        }
         catch( InterruptedException e ) {
         System.exit(0);
         }
     }
   public void loop() {
-      
+
         while (true) {
             delay(300);
-            frameImage.addPixelsFuzz(20);
+            frameImage.addPixelsFuzz(200);
             System.out.println("painted" + ", " + frameImage.getText());
             delay(300);
             frameImage.reSize(3);
@@ -39,7 +39,7 @@ public class Game {
               }
           });
 
-      
+
       frameImage.setBounds(200,200,1280,640);
       f.add(frameImage);
       frameImage.setBlank();
@@ -66,7 +66,8 @@ public class Game {
       JButton ton1 = new JButton("Edit");
       ton1.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent evt) {
-          frameImage.changeFlag();
+          Flag NewC = frameImage.changeFlag();
+
         }
       });
       ton1.setMnemonic(KeyEvent.VK_E);
@@ -78,7 +79,7 @@ public class Game {
 
       f.setVisible(true);
 
-      
+
 
 
 
