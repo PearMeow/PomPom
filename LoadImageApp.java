@@ -24,54 +24,54 @@ public class LoadImageApp extends Component {
     public void paint(Graphics g) {
         g.drawImage(resize, 0, 0, null);
     }
-    // public LoadImageApp() {
-    //   image = "PNG-128/US-128.png";
-    //    try {
-    //        img = ImageIO.read(new File(image));
-    //    } catch (IOException e) {
-    //    }
-    //    try {
-    //        img2 = ImageIO.read(new File(image));
-    //    } catch (IOException e) {
-    //    }
-    //    try {
-    //        resize = ImageIO.read(new File(image));
-    //    } catch (IOException e) {
-    //    }
-    //    _size = 1;
-    //    eRows = 0;
-    //    user = dubq(img.getWidth(),img.getHeight());
-    // }
+     public LoadImageApp() {
+       image = "PNG-128/US-128.png";
+        try {
+            img = ImageIO.read(new File(image));
+        } catch (IOException e) {
+        }
+        try {
+            img2 = ImageIO.read(new File(image));
+        } catch (IOException e) {
+        }
+        try {
+            resize = ImageIO.read(new File(image));
+        } catch (IOException e) {
+        }
+        _size = 1;
+        eRows = 0;
+        user = dubq(img.getWidth(),img.getHeight());
+     }
 
-    // public LoadImageApp(int diff) {
-    //   image = "PNG-128/WF-128.png";
-    //   text = "WF";
-    //    try {
-    //        img = ImageIO.read(new File(image));
-    //    } catch (IOException e) {
-    //    }
-    //    try {
-    //        img2 = ImageIO.read(new File(image));
-    //    } catch (IOException e) {
-    //    }
-    //    try {
-    //        resize = ImageIO.read(new File(image));
-    //    } catch (IOException e) {
-    //    }
-    //    _size = 1;
-    //    eRows = 0;
-    //    user = dubq(img.getWidth(), img.getHeight());
-
-    //   if( diff == 1)
-    //     countries = countdiff1;
-    //   if(diff == 2){
-    //     countries = countdiff2;
-    //   }
-    //   else{
-    //     countries = countdiff3;
-    //   }
-
-    // }
+     public LoadImageApp(int diff) {
+       image = "PNG-128/WF-128.png";
+       text = "WF";
+        try {
+            img = ImageIO.read(new File(image));
+        } catch (IOException e) {
+        }
+        try {
+            img2 = ImageIO.read(new File(image));
+         } catch (IOException e) {
+         }
+         try {
+             resize = ImageIO.read(new File(image));
+         } catch (IOException e) {
+         }
+         _size = 1;
+         eRows = 0;
+         user = dubq(img.getWidth(), img.getHeight());
+/*
+        if( diff == 1)
+          countries = countdiff1;
+        if(diff == 2){
+          countries = countdiff2;
+        }
+        else{
+          countries = countdiff3;
+        }
+*/
+      }
     public LoadImageApp(String n) {
       image = "PNG-128/" + n + "-128.png";
       text = n;

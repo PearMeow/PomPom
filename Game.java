@@ -63,7 +63,7 @@ public class Game {
       textField.setBounds(200,0,200,200);
       f.add(textField);
 
-      JButton ton1 = new JButton("Edit");
+      JButton ton1 = new JButton("Difficulty One");
       ton1.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent evt) {
           Flag NewC = frameImage.changeFlag();
