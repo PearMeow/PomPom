@@ -88,4 +88,8 @@ Oscar :: Added difficulties in LoadImageApp.java, made constructor to set to onl
 2022-06-03:
 Everyone :: Revamped whole structure of files. Made Woo very simple. Added Game class for clarity. 
 Created Flag and FlagList to replace a random scramble of Strings.
+--------------------------------------------------------------
+2022-06-03:
+Everyone :: manual labor of adding each flag, code and difficulty
+Oscar :: added two more diffculty buttons, diffculty now changes based on which button you press, inclusive of all lower difficulties
 ==============================================================
