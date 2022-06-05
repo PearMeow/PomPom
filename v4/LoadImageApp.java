@@ -245,12 +245,12 @@ public class LoadImageApp extends Component {
       return retVal;
     }
 
-    public Flag changeFlag(int diffi) {
+    public Flag changeFlag() {
 
       FlagList source = new FlagList();
-    //  int rando = (int)(Math.random() * source.getCash(diffi).length);
-      Flag newC = source.getCash(diffi); //[rando]
-
+      int rando = (int)(Math.random() * source.getCash().length);
+      Flag newC = source.getCash()[rando];
+      
       text = newC.flagCode();
       image = "PNG-128/" + text + "-128.png";
        try {
