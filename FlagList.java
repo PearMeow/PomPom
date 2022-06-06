@@ -21,7 +21,6 @@ public class FlagList {
         Cash[15] = new Flag(3,"Aland Islands","AX");
         Cash[16] = new Flag(3,"Azerbaijan","AZ");
         Cash[17] = new Flag(2,"Bosnia","BA");
-        Cash[18] = new Flag(2,"Barbados","BB");
         Cash[19] = new Flag(1,"Bangladesh","BD");
         Cash[20] = new Flag(0,"Belgium","BE");
         Cash[21] = new Flag(3,"Burkina Faso","BF");
@@ -42,9 +41,9 @@ public class FlagList {
         Cash[37] = new Flag(3,"Belize","BZ");
         Cash[38] = new Flag(0,"Canada","CA");
         Cash[39] = new Flag(2,"Cocos Islands","CC");
-        Cash[40] = new Flag(3,"Democratic Republic of The COngo","CD");
-        Cash[41] = new Flag(3,"The Central African Republic","CF");
-        Cash[42] = new Flag(3,"The Congo","CG");
+        Cash[40] = new Flag(3,"Democratic Republic of The Congo","CD");
+        Cash[41] = new Flag(3,"Central African Republic","CF");
+        Cash[42] = new Flag(3,"Congo","CG");
         Cash[43] = new Flag(0,"Switzerland","CH");
         Cash[44] = new Flag(1,"Cote d'Ivoire","CI");
         Cash[45] = new Flag(3,"Cook Islands","CK");
@@ -63,7 +62,7 @@ public class FlagList {
         Cash[58] = new Flag(3,"Djibouti","DJ");
         Cash[59] = new Flag(1,"Denmark","DK");
         Cash[60] = new Flag(3,"Dominica","DM");
-        Cash[61] = new Flag(2,"The Dominican Republic","DO");
+        Cash[61] = new Flag(2,"Dominican Republic","DO");
         Cash[62] = new Flag(2,"Algeria","DZ");
         Cash[63] = new Flag(1,"Ecuador","EC");
         Cash[64] = new Flag(2,"Estonia","EE");
@@ -102,7 +101,6 @@ public class FlagList {
         Cash[93] = new Flag(0,"United Kingdom","GB");
         Cash[94] = new Flag(3,"Grenada","GD");
         Cash[95] = new Flag(1,"Georgia","GE");
-        Cash[96] = new Flag(3,"French Guiana","GF");
         Cash[97] = new Flag(3,"Guernsey","GG");
         Cash[98] = new Flag(1,"Ghana","GH");
         Cash[99] = new Flag(3,"Gibraltar","GI");
@@ -173,8 +171,8 @@ public class FlagList {
         Cash[164] = new Flag(3,"Mauritania","MR");
         Cash[165] = new Flag(3,"Montserrat","MS");
         Cash[166] = new Flag(3,"Malta","MT");
-        Cash[167] = new Flag(2,"Myanmar","MM");
-        Cash[168] = new Flag(2,"Monaco","MC");
+        Cash[18] = new Flag(2,"Myanmar","MM");
+        Cash[96] = new Flag(2,"Monaco","MC");
         Cash[0] = new Flag(1,"Kazakhstan","KZ");
 
         /*** Start with NZ

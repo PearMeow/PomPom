@@ -17,7 +17,7 @@ public class Game {
         }
     }
   public void loop() {
-        frameImage.changeFlag(0);
+
         while (true) {
             delay(300);
             frameImage.addPixelsFuzz(200);
@@ -57,7 +57,9 @@ public class Game {
           String text = textField.getText();
           if (text.equals(currFlag.getName())) {
             currFlag = frameImage.changeFlag(difficulty);
+            
           }
+          textField.setText("");
         }
       });
       textField.setBounds(0,200,200,200);
@@ -66,20 +68,22 @@ public class Game {
       JButton ton1 = new JButton("Difficulty One");
       ton1.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent evt) {
-          Flag NewC = frameImage.changeFlag(1);
+          currFlag = frameImage.changeFlag(difficulty);
            difficulty = 1;
+           
         }
       });
       ton1.setMnemonic(KeyEvent.VK_E);
       ton1.setBounds(0,100,200,100);
       f.add(ton1);
+      
 
 
       JButton ton2 = new JButton("Difficulty Two");
       ton2.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent evt) {
-          Flag NewC = frameImage.changeFlag(2);
           difficulty = 2;
+          currFlag = frameImage.changeFlag(difficulty);
 
         }
       });
@@ -91,8 +95,9 @@ public class Game {
       JButton ton3 = new JButton("Difficulty Three");
       ton3.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent evt) {
-          Flag NewC = frameImage.changeFlag(3);
           difficulty = 3;
+          currFlag = frameImage.changeFlag(difficulty);
+
 
         }
       });

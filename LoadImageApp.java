@@ -98,9 +98,7 @@ public class LoadImageApp extends Component {
 
           for (int count = 0; count < _size; count +=_size) {
             for (int count2 = 0; count2 < _size; count2 +=_size) {
-                if ( (xcord / _size) > width || (ycord / _size) > height || (xcord + count ) > Bwidth || (ycord + count2) > Bheight || (xcord / _size) < 0 || (ycord / _size) < 0 || (xcord + count ) < 0 || (ycord + count2) < 0) {
-                  System.out.println("bad");
-                }
+                
                 resize.setRGB(xcord + count, ycord + count2, img.getRGB((xcord / _size), (ycord / _size)));
             }
             }
@@ -207,6 +205,7 @@ public class LoadImageApp extends Component {
 
 
     //  int rando = (int)(Math.random() * source.getCash(diffi).length);
+       
       Flag newC = sourcery.getCash(diffi); //[rando]
 
       text = newC.flagCode();
@@ -223,7 +222,7 @@ public class LoadImageApp extends Component {
            resize = ImageIO.read(new File(image));
        } catch (IOException e) {
        }
-       setBlank();
+        setBlank();
        return newC;
     }
 
