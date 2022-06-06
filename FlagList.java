@@ -1,14 +1,9 @@
 public class FlagList {
 
-    public Flag[] Cash = new Flag[250];
+    Flag[] Cash;
     public FlagList () {
-      /****
+        Cash = new Flag[169];
 
-      String[] countries = {"AD","AE","AF","AG","AI","AL","AM","AO","AQ","AR","AS","AT","AU","AW","AX","AZ","BA","BB","BD","BE","BF","BG","BH","BI","BJ","BL","BM","BN","BO","BQ","BR","BS","BT","BV","BW","BY","BZ","CA","CC","CD","CF","CG","CH","CI","CK","CL","CM","CN","CO","CR","CU","CV","CW","CX","CY","CZ","DE","DJ","DK","DM","DO","DZ","EC","EE","EG","EH","ER","ES","ET","EU","FI","FJ","FK","FM","FO","FR","GA","GB","GD","GE","GF","GG","GH","GI","GL","GM","GN","GP","GQ","GR","GS","GT","GU","GW","GY","HK","HM","HN","HR","HT","HU","ID","IE","IL","IM","IN","IO","IQ","IR","IS","IT","JE","JM","JO","JP","KE","KG","KH","KI","KM","KN","KP","KR","KW","KY","KZ","LA","LB","LC","LI","LK","LR","LS","LT","LU","LV","LY","MA","MC","MD","ME","MF","MG","MH","MK","ML","MM","MN","MO","MP","MQ","MR","MS","MT",
-"MU","MV","MW","MX","MY","MZ","NA","NC","NE","NF","NG","NI","NL","NO","NP","NR","NU","NZ","OM","PA","PE","PF","PG","PH","PK","PL","PM","PN","PR","PS","PT","PW","PY","QA","RE","RO","RS","RU","RW","SA","SB","SC","SD","SE","SG","SH","SI","SJ","SK","SL","SM","SN","SO","SR","SS","ST","SV","SX","SY","SZ","TC","TD","TF","TG","TH","TJ","TK","TL","TM","TN","TO","TR","TT","TV","TW","TZ","UA","UG","UM","US","UY","UZ","VA","VC","VE","VG","VI","VN","VU","WF","WS","YE","YT","ZA","ZM","ZW"};
-      String[] countryNames = {"Andorra","The United Arab Emirates","Afghanistan","Antigua and Barbuda","Anguilla","Albania","Armenia","Angola","Antarctica","Argentina","American Samoa","Austria","Australia","Aruba","Aland Islands","Azerbaijan","Bosnia and Herzegovina","Barbados","Bangladesh","Belgium","Burkina Faso","Bulgaria","Bahrain","Burundi","Benin","Saint Barthelemy","Bermuda","Brunei Darussalam","Bolivia","Bonaire","Brazil","The Bahamas","Bhutan","Bouvet Island","Botswana","Belarus","Belize","Belize","The Cocos Islands","Democratic Republic of the Congo","The Central African Republic","The Congo","Cote d'Ivoire","The Cook Islands","Chile","Cameroon","China","Colombia","Costa Rica","Cuba","Cabo Verde","Curacao","Christmas Island","Cyprus","Czechia","Germany","Djibouti","Denmark","Dominica","The Dominican Republic","Algeria","Ecuador","Estonia","Egypt","Western Sahara","Eritrea","Spain"}; //end on "ES"
-
-*/
         Cash[1] = new Flag(3,"Andorra","AD");
         Cash[2] = new Flag(2,"United Arab Emirates","AE");
         Cash[3] = new Flag(2,"Afghanistan","AF");
@@ -180,7 +175,8 @@ public class FlagList {
         Cash[166] = new Flag(3,"Malta","MT");
         Cash[167] = new Flag(2,"Myanmar","MM");
         Cash[168] = new Flag(2,"Monaco","MC");
-        Cash[169] = new Flag(1,"Kazakhstan","KZ");
+        Cash[0] = new Flag(1,"Kazakhstan","KZ");
+
         /*** Start with NZ
         Cash[1] = new Flag(,"","");
         Cash[1] = new Flag(,"","");
@@ -269,12 +265,13 @@ public class FlagList {
     }
     public Flag getCash (int difficulty) {
       int i = 0;
-      while( i >= 0){
-       i = (int)(Math.random() * 250);
+      while( true){
+       i = (int)(Math.random() * Cash.length);
         if( Cash[i].getDiff() <= difficulty){
            return Cash[i];
        }
      }
-     return Cash[i];
+
     }
+
 }

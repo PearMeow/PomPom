@@ -17,7 +17,7 @@ public class Game {
         }
     }
   public void loop() {
-
+        frameImage.changeFlag(0);
         while (true) {
             delay(300);
             frameImage.addPixelsFuzz(200);
@@ -40,7 +40,7 @@ public class Game {
               }
           });
 
-
+      frameImage.displayCall();
       frameImage.setBounds(200,200,1280,640);
       f.add(frameImage);
       frameImage.setBlank();
