@@ -95,5 +95,8 @@ Everyone :: manual labor of adding each flag, code and difficulty
 Oscar :: added two more diffculty buttons, diffculty now changes based on which button you press, inclusive of all lower difficulties
 --------------------------------------------------------------
 2022-06-06:
-Max :: Fixed bugs
+Everyone :: Playtested the game for an extensive amount of time.
+Max :: Fixed bugs.
+Perry :: Finished the list of countries in FlagList.java.
+
 ==============================================================
