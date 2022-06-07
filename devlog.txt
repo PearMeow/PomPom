@@ -102,4 +102,7 @@ Max :: Fixed bugs.
 Perry :: Finished the list of countries in FlagList.java.
 Oscar :: Added Missing difficulty 0 button, made v5
          Added buttons to switch between adding segments and adding Pixels.
+--------------------------------------------------------------
+2022-06-07:
+Everyone :: Playtested the game and adjusted the diffculties for countries.
 ==============================================================

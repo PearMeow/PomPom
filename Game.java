@@ -37,7 +37,6 @@ public class Game {
         }
   }
   public static void startGame() {
-      int mode = 0;
       JFrame f = new JFrame("Load Image Sample");
 
       f.addWindowListener(new WindowAdapter(){
