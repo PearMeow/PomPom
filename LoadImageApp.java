@@ -98,7 +98,7 @@ public class LoadImageApp extends Component {
 
           for (int count = 0; count < _size; count +=_size) {
             for (int count2 = 0; count2 < _size; count2 +=_size) {
-                
+
                 resize.setRGB(xcord + count, ycord + count2, img.getRGB((xcord / _size), (ycord / _size)));
             }
             }

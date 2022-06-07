@@ -19,13 +19,13 @@ public class Game {
   public void loop() {
 
         while (true) {
-            delay(300);
-            frameImage.addPixelsFuzz(200);
+            delay(400);
+            frameImage.addPixelsFuzz(100);
             System.out.println("painted" + ", " + frameImage.getText());
-            delay(300);
+            delay(400);
             frameImage.reSize(3);
             System.out.println("resized");
-            delay(300);
+            delay(400);
             frameImage.repaint();
             System.out.println("repaint");
         }
@@ -65,6 +65,20 @@ public class Game {
       textField.setBounds(0,200,200,200);
       f.add(textField);
 
+      JButton ton0 = new JButton("Difficulty Zero");
+      ton0.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent evt) {
+          currFlag = frameImage.changeFlag(difficulty);
+           difficulty = 0;
+
+        }
+      });
+      ton0.setMnemonic(KeyEvent.VK_T);
+      ton0.setBounds(0,100,200,100);
+      f.add(ton0);
+
+
+
       JButton ton1 = new JButton("Difficulty One");
       ton1.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent evt) {
@@ -74,7 +88,7 @@ public class Game {
         }
       });
       ton1.setMnemonic(KeyEvent.VK_E);
-      ton1.setBounds(0,100,200,100);
+      ton1.setBounds(300,100,200,100);
       f.add(ton1);
       
 
@@ -88,7 +102,7 @@ public class Game {
         }
       });
       ton2.setMnemonic(KeyEvent.VK_W);
-      ton2.setBounds(300,100,200,100);
+      ton2.setBounds(600,100,200,100);
       f.add(ton2);
 
 
@@ -102,7 +116,7 @@ public class Game {
         }
       });
       ton3.setMnemonic(KeyEvent.VK_Q);
-      ton3.setBounds(600,100,200,100);
+      ton3.setBounds(900,100,200,100);
       f.add(ton3);
 
 
