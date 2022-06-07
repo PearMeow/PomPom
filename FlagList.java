@@ -2,7 +2,7 @@ public class FlagList {
 
     Flag[] Cash;
     public FlagList () {
-        Cash = new Flag[169];
+        Cash = new Flag[246];
 
         Cash[1] = new Flag(3,"Andorra","AD");
         Cash[2] = new Flag(2,"United Arab Emirates","AE");
