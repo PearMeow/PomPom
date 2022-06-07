@@ -8,7 +8,7 @@ public class Game {
   static Flag currFlag = new Flag(0,"United States", "US");
   static LoadImageApp frameImage = new LoadImageApp(currFlag.flagCode());
   static int difficulty = 0;
-  static int addType = 0;
+  static int addType = 2;
   private static void delay( int n ) {
         try {
         Thread.sleep(n);
@@ -25,19 +25,19 @@ public class Game {
                frameImage.addPixelsFuzz(100);
             }
             if( addType == 1){
-               frameImage.addPixelsSeg(10,10);
+               frameImage.addPixelsSeg(5,5);
             }
             System.out.println("painted" + ", " + frameImage.getText());
-            delay(400);
-            frameImage.reSize(3);
+            delay(500);
+            frameImage.reSize(10);
             System.out.println("resized");
-            delay(400);
+
             frameImage.repaint();
             System.out.println("repaint");
         }
   }
   public static void startGame() {
-
+      int mode = 0;
       JFrame f = new JFrame("Load Image Sample");
 
       f.addWindowListener(new WindowAdapter(){
@@ -50,7 +50,7 @@ public class Game {
       frameImage.setBounds(200,200,1280,640);
       f.add(frameImage);
       frameImage.setBlank();
-          frameImage.reSize(2);
+          frameImage.reSize(5);
 
       // JLabel title = new JLabel("Welcome to Narnia");
       // title.setBounds(0,0,200,100);
@@ -91,6 +91,7 @@ public class Game {
       tonSeg.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent evt) {
            addType = 1;
+
 
         }
       });

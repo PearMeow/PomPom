@@ -152,21 +152,46 @@ public class LoadImageApp extends Component {
 
      public void addPixelsSeg(int repeat, int seg) {
 
-       int width = img.getWidth() ;
-       int height = img.getHeight();
+        int width = img.getWidth() ;
+        int height = img.getHeight();
+        int smallW = width / seg;
+        int smallH = height / seg;
+        int i = 0;
+        ArrayDeque<Integer>[] AD = dubq(smallW, smallH);
+        while (eRows < smallW && i < repeat) {
+        int randRow = (int)(Math.random() * smallW);
+        int x = randRow * seg;
+        int y = 0;
+        if (AD[randRow] == null){
 
+        }
+        else if (AD[randRow].isEmpty()) {
+          eRows++;
+          AD[randRow] = null;
+        }
+        else {
+          y=AD[randRow].remove() * seg;
+          for (int count = 0; count < seg; count++) {
+            for (int count2 = 0; count2 < seg; count2++) {
+              img.setRGB(x + count,y+count2, img2.getRGB(x+count,y+count2));
+            }
+            
+          }
+          i++;
+        }
+      }
+      transfer();
+      //  for (int reps = 0; reps < repeat; reps++) {
+      //    int w = (int)(Math.random() * (width - seg) );
+      //    int h = (int)(Math.random() * (height - seg));
+      //    for (int ww = 0; ww < seg; ww ++) {
+      //      for (int hh = 0; hh < seg; hh ++) {
+      //        img.setRGB(w+ww,h+hh, img2.getRGB(w+ww, h+hh));
+      //    }
+      //    }
 
-       for (int reps = 0; reps < repeat; reps++) {
-         int w = (int)(Math.random() * (width - seg) );
-         int h = (int)(Math.random() * (height - seg));
-         for (int ww = 0; ww < seg; ww ++) {
-           for (int hh = 0; hh < seg; hh ++) {
-             img.setRGB(w+ww,h+hh, img2.getRGB(w+ww, h+hh));
-         }
-         }
-
-       }
-       transfer();
+      //  }
+      //  transfer();
 
      }
 
@@ -200,6 +225,8 @@ public class LoadImageApp extends Component {
       }
       return retVal;
     }
+
+    
 
     public Flag changeFlag(int diffi) {
 
