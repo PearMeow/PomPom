@@ -8,7 +8,6 @@ public class Game {
   static Flag currFlag = new Flag(0,"United States", "US");
   static LoadImageApp frameImage = new LoadImageApp(currFlag.flagCode());
   static int difficulty = 0;
-  static int addType = 0;
   private static void delay( int n ) {
         try {
         Thread.sleep(n);
@@ -21,12 +20,7 @@ public class Game {
 
         while (true) {
             delay(400);
-            if( addType == 0){
-               frameImage.addPixelsFuzz(100);
-            }
-            if( addType == 1){
-               frameImage.addPixelsSeg(10,10);
-            }
+            frameImage.addPixelsFuzz(100);
             System.out.println("painted" + ", " + frameImage.getText());
             delay(400);
             frameImage.reSize(3);
@@ -71,36 +65,6 @@ public class Game {
       textField.setBounds(0,200,200,200);
       f.add(textField);
 
-
-
-
-//Buttons
-
-      JButton tonPix = new JButton("Add by Pixels");
-      tonPix.addActionListener(new ActionListener() {
-        public void actionPerformed(ActionEvent evt) {
-           addType = 0;
-
-        }
-      });
-      tonPix.setMnemonic(KeyEvent.VK_P);
-      tonPix.setBounds(110,10,100,50);
-      f.add(tonPix);
-
-      JButton tonSeg = new JButton("Add by Segments");
-      tonSeg.addActionListener(new ActionListener() {
-        public void actionPerformed(ActionEvent evt) {
-           addType = 1;
-
-        }
-      });
-      tonSeg.setMnemonic(KeyEvent.VK_S);
-      tonSeg.setBounds(10,10,100,50);
-      f.add(tonSeg);
-
-
-
-    // difficulty buttons
       JButton ton0 = new JButton("Difficulty Zero");
       ton0.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent evt) {

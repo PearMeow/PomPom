@@ -149,26 +149,26 @@ public class LoadImageApp extends Component {
       transfer();
     }
 
-
-     public void addPixelsSeg(int repeat, int seg) {
-
-       int width = img.getWidth() ;
-       int height = img.getHeight();
-
-
-       for (int reps = 0; reps < repeat; reps++) {
-         int w = (int)(Math.random() * (width - seg) );
-         int h = (int)(Math.random() * (height - seg));
-         for (int ww = 0; ww < seg; ww ++) {
-           for (int hh = 0; hh < seg; hh ++) {
-             img.setRGB(w+ww,h+hh, img2.getRGB(w+ww, h+hh));
-         }
-         }
-
-       }
-       transfer();
-
-     }
+    // public void addPixelsSeg(int repeat, int seg) {
+    //
+    //
+    //   int width = img.getWidth() ;
+    //   int height = img.getHeight();
+    //
+    //
+    //   for (int reps = 0; reps < repeat; reps++) {
+    //     int w = (int)(Math.random() * (width - seg) );
+    //     int h = (int)(Math.random() * (height - seg));
+    //     for (int ww = 0; ww < seg; ww ++) {
+    //       for (int hh = 0; hh < seg; hh ++) {
+    //         img.setRGB(w+ww,h+hh, img2.getRGB(w+ww, h+hh));
+    //     }
+    //     }
+    //
+    //   }
+    //   reSize(_size);
+    //
+    // }
 
     public ArrayDeque<Integer>[] dubq(int x, int y) {
       ArrayList<Integer> xx = new ArrayList<Integer>();

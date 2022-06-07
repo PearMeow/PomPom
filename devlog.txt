@@ -17,6 +17,7 @@ OBSTACLES OVERCOME
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  - how to add scoring system
+ - control speed of pixel reveal 
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -26,6 +27,7 @@ COOL STUFF LEARNED
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Now have difficuties for each flag section
+
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -98,5 +100,6 @@ Oscar :: added two more diffculty buttons, diffculty now changes based on which 
 Everyone :: Playtested the game for an extensive amount of time.
 Max :: Fixed bugs.
 Perry :: Finished the list of countries in FlagList.java.
-Oscar :: Added Missing difficulty 0 button
+Oscar :: Added Missing difficulty 0 button, made v5
+         Added buttons to switch between adding segments and adding Pixels.
 ==============================================================
