@@ -17,7 +17,7 @@ OBSTACLES OVERCOME
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  - how to add scoring system
- - control speed of pixel reveal 
+ - control speed of pixel reveal
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -105,4 +105,5 @@ Oscar :: Added Missing difficulty 0 button, made v5
 --------------------------------------------------------------
 2022-06-07:
 Everyone :: Playtested the game and adjusted the diffculties for countries.
+Max :: Small graphics changes
 ==============================================================
