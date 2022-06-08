@@ -114,7 +114,7 @@ public class LoadImageApp extends Component {
       int height = img.getHeight();
       for (int xcord = 0; xcord < width ; xcord ++) {
         for (int ycord = 0; ycord < height; ycord ++) {
-          img.setRGB(xcord,ycord,-1);
+          img.setRGB(xcord,ycord,0);
         }
 
       }
@@ -175,7 +175,7 @@ public class LoadImageApp extends Component {
             for (int count2 = 0; count2 < seg; count2++) {
               img.setRGB(x + count,y+count2, img2.getRGB(x+count,y+count2));
             }
-            
+
           }
           i++;
         }
@@ -226,13 +226,13 @@ public class LoadImageApp extends Component {
       return retVal;
     }
 
-    
+
 
     public Flag changeFlag(int diffi) {
 
 
     //  int rando = (int)(Math.random() * source.getCash(diffi).length);
-       
+
       Flag newC = sourcery.getCash(diffi); //[rando]
 
       text = newC.flagCode();
