@@ -19,6 +19,9 @@ public class Game {
   static int currentScore = (128 * 64);
   static int pixAdded = 0;
 
+  static String text = "No country yet";
+  static Boolean changed = false;
+
   public static void reset() {
     currentScore = (128 * 64);
   }
@@ -31,36 +34,49 @@ public class Game {
         System.exit(0);
         }
     }
+
+  public static void flagChange() {
+    if (text.equals(currFlag.getName())) {
+      curr.setText("Correct!");
+    }
+    else {
+      curr.setText(currFlag.getName());
+    }
+    currFlag = frameImage.changeFlag(difficulty);
+    changed = true;
+  }
   public static void loop() {
       while(!selec) {
-        delay(10);
+        delay(1);
       }
         while (true) {
-            delay(400);
-            if( addType == 0){
-               frameImage.addPixelsFuzz(100);
-               pixAdded +=100;
-               System.out.println(pixAdded + " out of " + (128 * 64));
-
-            }
-            if( addType == 1){
-               frameImage.addPixelsSeg(5,5);
-            }
-
-            delay(500);
-            frameImage.reSize(10);
-            frameImage.repaint();
-            if (pixAdded < (64 * 128)) {
-                currentScore -= 100;
-                curr.setText("Available Score: " + currentScore / 100 * (difficulty + 1));
-            }
-            else {
-              curr.setText(currFlag.getName());
+            if (changed) {
+              changed = false;
               delay(2000);
-              reset();
-              pixAdded = 0;
-              currFlag = frameImage.changeFlag(difficulty);
+            } else {
+              if( addType == 0){
+                 frameImage.addPixelsFuzz(100);
+                 pixAdded +=100;
+
+              }
+              if( addType == 1){
+                 frameImage.addPixelsSeg(5,5);
+              }
+
+              delay(500);
+              frameImage.reSize(10);
+              frameImage.repaint();
+              if (pixAdded < (64 * 128)) {
+                  currentScore -= 100;
+                  curr.setText("Available Score: " + currentScore / 100 * (difficulty + 1));
+              }
+              else {
+                reset();
+                pixAdded = 0;
+                flagChange();
+              }
             }
+
         }
   }
   public static void startGame() {
@@ -91,14 +107,16 @@ public class Game {
       textField = new JTextField(20);
       textField.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent evt) {
-          String text = textField.getText();
+          text = textField.getText();
           if (text.equals(currFlag.getName())) {
-            currFlag = frameImage.changeFlag(difficulty);
+
+
             totalScore += (currentScore / 100) * (difficulty + 1);
             title.setText("Score :" + totalScore);
-            
+
             reset();
             pixAdded = 0;
+            flagChange();
           }
           textField.setText("");
         }
@@ -120,7 +138,7 @@ public class Game {
         }
       });
       tonPix.setBounds(110,10,100,50);
-      
+
       f.add(tonPix);
 
       tonSeg = new JButton("Add by Segments");
@@ -132,7 +150,7 @@ public class Game {
         }
       });
       tonSeg.setBounds(10,10,100,50);
-      
+
       f.add(tonSeg);
 
 
@@ -141,14 +159,14 @@ public class Game {
       ton0 = new JButton("Difficulty Zero");
       ton0.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent evt) {
-          currFlag = frameImage.changeFlag(difficulty);
-           difficulty = 0;
-            reset();
+          flagChange();
+          difficulty = 0;
+          reset();
 
         }
       });
       ton0.setBounds(0,100,200,100);
-    
+
       f.add(ton0);
 
 
@@ -156,9 +174,9 @@ public class Game {
       ton1 = new JButton("Difficulty One");
       ton1.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent evt) {
-          currFlag = frameImage.changeFlag(difficulty);
-           difficulty = 1;
-            reset();
+          flagChange();
+          difficulty = 1;
+          reset();
 
 
         }
@@ -173,30 +191,29 @@ public class Game {
       ton2 = new JButton("Difficulty Two");
       ton2.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent evt) {
+          flagChange();
           difficulty = 2;
           reset();
-
-          currFlag = frameImage.changeFlag(difficulty);
 
         }
       });
       ton2.setBounds(600,100,200,100);
-    
+
       f.add(ton2);
 
 
       ton3 = new JButton("Difficulty Three");
       ton3.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent evt) {
+          flagChange();
           difficulty = 3;
-          currFlag = frameImage.changeFlag(difficulty);
           reset();
 
 
         }
       });
       ton3.setBounds(900,100,200,100);
-  
+
       f.add(ton3);
 
 
