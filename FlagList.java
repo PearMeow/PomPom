@@ -2,7 +2,7 @@ public class FlagList {
 
     Flag[] Cash;
     public FlagList () {
-        Cash = new Flag[246];
+        Cash = new Flag[245];
 
         Cash[1] = new Flag(3,"Andorra","AD");
         Cash[2] = new Flag(2,"United Arab Emirates","AE");
@@ -44,7 +44,6 @@ public class FlagList {
         Cash[40] = new Flag(3,"Democratic Republic of The Congo","CD");
         Cash[41] = new Flag(3,"Central African Republic","CF");
         Cash[42] = new Flag(3,"Congo","CG");
-        Cash[43] = new Flag(0,"Switzerland","CH");
         Cash[44] = new Flag(1,"Cote d'Ivoire","CI");
         Cash[45] = new Flag(3,"Cook Islands","CK");
         Cash[46] = new Flag(1,"Chile","CL");
@@ -191,7 +190,7 @@ public class FlagList {
         Cash[179] = new Flag(1,"Palestine","PS");
         Cash[180] = new Flag(1,"Portugal","PT");
         // made a mistake
-        Cash[245] = new Flag(2,"Palau","PW");
+        Cash[244] = new Flag(2,"Palau","PW");
         Cash[181] = new Flag(1,"Paraguay","PY");
         Cash[182] = new Flag(3,"Qatar","QA");
         Cash[183] = new Flag(3,"Reunion","RE");
@@ -255,7 +254,7 @@ public class FlagList {
         Cash[241] = new Flag(3,"Mayotte","YT");
         Cash[242] = new Flag(1,"South Africa","ZA");
         Cash[243] = new Flag(3,"Zambia","ZM");
-        Cash[244] = new Flag(2,"Zimbabwe","ZW");
+        Cash[43] = new Flag(2,"Zimbabwe","ZW");
     }
     public Flag getCash (int difficulty) {
       int i = 0;

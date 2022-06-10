@@ -113,4 +113,6 @@ Everyone :: Added scoring mechanism
 2022-06-09:
 Max :: Graphics fix
        Got rid of random breaking glitch
+       Made game a Game
+       It looks good!
 ==============================================================
